@@ -87,6 +87,7 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
  
 }
     void acceder(String usuario, String pass){
+        F_Menu_P menu = new F_Menu_P();
         String cap="";
         String sql="SELECT * FROM usuario WHERE nombre='"+usuario+"'AND contraseña='"+pass+"'";
         try {
@@ -96,27 +97,17 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
             while(rs.next()){
                cap=rs.getString("tipo");
             }
+            String tipo = cap;
             
-            if(cap.equals("Administrador")){
-            
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Bienvenido al Sistema "+ usuario);
-            F_Menu_P ingreso=new F_Menu_P();
-            ingreso.setVisible(true);
-            ingreso.pack();
-            //vistacliente.lblusu.setText(usuario);
-            }
-            
-            if(cap.equals("Invitado")){
-            
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Bienvenido al Sistema "+ usuario);
-            F_Menu_invi ingresos=new F_Menu_invi();
-            ingresos.setVisible(true);
-            ingresos.pack();
-            //Menu_Invitado.lblusuario.setText(usuario);
-            }
-            
+            if(!"Administrador".equals(tipo)){
+                menu.btnagregar.setEnabled(false);
+            } 
+            menu.setVisible(true);
+            menu.pack();
+            menu.btnagregar.setEnabled(false);
+            menu.reporte.setEnabled(false);
+            this.dispose();
+            System.out.print(tipo);         
              if((!cap.equals("Administrador"))&&(!cap.equals("Invitado"))){
             
                 JOptionPane.showMessageDialog(this, "NO EXISTEN SUS DATOS");
@@ -160,9 +151,10 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("USERname");
+        jLabel1.setText("USERNAME");
+        jLabel1.setToolTipText("");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(270, 140, 210, 48);
+        jLabel1.setBounds(240, 140, 270, 43);
 
         txtPassOculto.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         jPanel1.add(txtPassOculto);
@@ -178,7 +170,7 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
         btningresar.setBorder(null);
         btningresar.setBorderPainted(false);
         btningresar.setContentAreaFilled(false);
-        btningresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btningresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btningresar.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/arrow_right_178402.png"))); // NOI18N
         btningresar.setFocusPainted(false);
         btningresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Aceptar/acep_press.png"))); // NOI18N
@@ -196,13 +188,13 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
         txt_pass.setForeground(new java.awt.Color(255, 255, 255));
         txt_pass.setText("PASSWORD");
         jPanel1.add(txt_pass);
-        txt_pass.setBounds(270, 240, 200, 50);
+        txt_pass.setBounds(240, 240, 260, 50);
 
         btn_mostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Contraseña/ver_contra_norm.png"))); // NOI18N
         btn_mostrar.setBorder(null);
         btn_mostrar.setBorderPainted(false);
         btn_mostrar.setContentAreaFilled(false);
-        btn_mostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_mostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_mostrar.setFocusPainted(false);
         btn_mostrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Contraseña/ver_contra_press.png"))); // NOI18N
         btn_mostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -219,7 +211,7 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
         btnborrar.setToolTipText("Borrar");
         btnborrar.setBorder(null);
         btnborrar.setContentAreaFilled(false);
-        btnborrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnborrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnborrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Limpiar/limpiar_press.png"))); // NOI18N
         btnborrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Limpiar/limpiar_roll.png"))); // NOI18N
         btnborrar.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +220,7 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
             }
         });
         jPanel1.add(btnborrar);
-        btnborrar.setBounds(150, 420, 110, 50);
+        btnborrar.setBounds(150, 420, 120, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/login.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -241,7 +233,7 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
         btnsalir1.setBorder(null);
         btnsalir1.setBorderPainted(false);
         btnsalir1.setContentAreaFilled(false);
-        btnsalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnsalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnsalir1.setFocusPainted(false);
         btnsalir1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Salir/salir_press.png"))); // NOI18N
         btnsalir1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones_icon/Salir/salir_roll.png"))); // NOI18N

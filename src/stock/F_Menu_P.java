@@ -46,10 +46,10 @@ public class F_Menu_P extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnagregar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        reporte = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -63,16 +63,15 @@ public class F_Menu_P extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CONTROL DE STOCK");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(220, 0, 339, 58);
+        jLabel1.setBounds(220, 0, 339, 57);
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Agency FB", 1, 22)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cart_17822.png"))); // NOI18N
         jButton1.setText("Realizar venta");
-        jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -87,9 +86,8 @@ public class F_Menu_P extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/arrow_up_17892.png"))); // NOI18N
         jButton2.setText("CARGA DE PRODUCTOS");
         jButton2.setToolTipText("Carga Nueva");
-        jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.setFocusPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,32 +95,30 @@ public class F_Menu_P extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(350, 70, 240, 70);
+        jButton2.setBounds(350, 70, 310, 70);
 
-        jButton3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/add_insert_new_17850.png"))); // NOI18N
-        jButton3.setText("AGREGAR USUARIO");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.setFocusPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnagregar.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        btnagregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/add_insert_new_17850.png"))); // NOI18N
+        btnagregar.setText("AGREGAR USUARIO");
+        btnagregar.setBorderPainted(false);
+        btnagregar.setContentAreaFilled(false);
+        btnagregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnagregar.setFocusPainted(false);
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnagregarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(50, 170, 250, 70);
+        jPanel1.add(btnagregar);
+        btnagregar.setBounds(20, 170, 290, 70);
 
         jButton4.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/arrow_left_17809.png"))); // NOI18N
         jButton4.setToolTipText("Salir");
-        jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton4.setFocusPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,10 +132,9 @@ public class F_Menu_P extends javax.swing.JFrame {
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/add_insert_new_17850.png"))); // NOI18N
         jButton5.setText("REGISTRAR CLIENTE");
-        jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton5.setFocusPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,23 +144,22 @@ public class F_Menu_P extends javax.swing.JFrame {
         jPanel1.add(jButton5);
         jButton5.setBounds(340, 260, 230, 70);
 
-        jButton6.setText("Reporte");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        reporte.setText("Reporte");
+        reporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                reporteActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(120, 290, 110, 23);
+        jPanel1.add(reporte);
+        reporte.setBounds(120, 290, 110, 31);
 
         jButton7.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/add_insert_new_17850.png"))); // NOI18N
         jButton7.setText("AGREGAR MARCA");
-        jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton7.setFocusPainted(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +167,7 @@ public class F_Menu_P extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton7);
-        jButton7.setBounds(340, 160, 230, 70);
+        jButton7.setBounds(330, 160, 330, 70);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/background-blue-grundgy-wallpapers-wallpaper-clean-miscellaneous-....jpg"))); // NOI18N
         jPanel1.add(jLabel4);
@@ -195,7 +189,8 @@ public class F_Menu_P extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       new venta().setVisible(true);
+      ventas v = new ventas();
+      //v.formToFront();
        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -211,11 +206,11 @@ public class F_Menu_P extends javax.swing.JFrame {
         new login().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
         // TODO add your handling code here:
         dispose();
         new Registrousuario().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnagregarActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -224,7 +219,7 @@ public class F_Menu_P extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteActionPerformed
         // TODO add your handling code here:
          conectar cc=new conectar();
             Connection cn= cc.conexion();      
@@ -245,7 +240,7 @@ public class F_Menu_P extends javax.swing.JFrame {
         }   
         dispose();// TODO add your handling code here:
 
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_reporteActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -287,15 +282,15 @@ public class F_Menu_P extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnagregar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton reporte;
     // End of variables declaration//GEN-END:variables
 }

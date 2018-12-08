@@ -31,7 +31,7 @@ try {
 
            //Cargamos el Driver MySQL
 Class.forName("org.gjt.mm.mysql.Driver");
-conect = DriverManager.getConnection("jdbc:mysql://localhost/stock","root","");
+conect = DriverManager.getConnection("jdbc:mysql://localhost/stock","root","admin");
            //Cargamos el Driver Access
 //JOptionPane.showMessageDialog(null,"conectado");
            //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
