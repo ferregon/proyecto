@@ -97,7 +97,7 @@ public class F_Menu_P extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(350, 70, 310, 70);
+        jButton2.setBounds(350, 70, 330, 70);
 
         btnagregar.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         btnagregar.setForeground(new java.awt.Color(255, 255, 255));
