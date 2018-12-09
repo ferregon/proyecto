@@ -51,7 +51,9 @@ public class F_Menu_P extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         reporte = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lbluser = new javax.swing.JLabel();
+        lbltype = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,19 +171,27 @@ public class F_Menu_P extends javax.swing.JFrame {
         jPanel1.add(jButton7);
         jButton7.setBounds(330, 160, 330, 70);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/background-blue-grundgy-wallpapers-wallpaper-clean-miscellaneous-....jpg"))); // NOI18N
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, -60, 1120, 470);
+        lbluser.setText("jLabel2");
+        jPanel1.add(lbluser);
+        lbluser.setBounds(220, 340, 51, 15);
+
+        lbltype.setText("jLabel2");
+        jPanel1.add(lbltype);
+        lbltype.setBounds(320, 340, 51, 15);
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/background-blue-grundgy-wallpapers-wallpaper-clean-miscellaneous-....jpg"))); // NOI18N
+        jPanel1.add(fondo);
+        fondo.setBounds(0, -60, 1120, 470);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
         );
 
         pack();
@@ -189,9 +199,10 @@ public class F_Menu_P extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      ventas v = new ventas();
-      //v.formToFront();
-       dispose();
+        ventas cli= new ventas();
+        //jdpescritorio.add(cli);
+        cli.show();
+        cli.setLocation(600, 150);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -283,14 +294,16 @@ public class F_Menu_P extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnagregar;
+    public javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lbltype;
+    public javax.swing.JLabel lbluser;
     public javax.swing.JButton reporte;
     // End of variables declaration//GEN-END:variables
 }

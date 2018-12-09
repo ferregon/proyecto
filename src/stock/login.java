@@ -16,6 +16,9 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import models.SqlUsers;
+import models.hash;
+import models.users;
 
 /**
  *
@@ -35,12 +38,12 @@ public class login extends javax.swing.JFrame {
     public login() {
       modelotabla = new DefaultTableModel (null, getColumnas());
         modeloCombo = new DefaultComboBoxModel(new String [] {});
-        setFilas(); 
+//        setFilas(); 
         initComponents();
                 //Ocultamiento y muestreo de componentes
         txtPassOculto.setVisible(true);
         txtPassVisible.setVisible(false);
-        //limpiar();
+        limpiar();
         //bloquear(); 
         //cargar("");
         llenaComboBox();
@@ -53,24 +56,30 @@ public class login extends javax.swing.JFrame {
             String columna[]= new String []{"id", "nombre", "contraseña,","tipo"};
         return columna;
     }
-    private void setFilas(){
-        try {
-            String sql ="select * from usuario ";
-            Statement st= cc.conexion().prepareStatement(sql);
-            ResultSet rs= st.executeQuery(sql);
-            
-            Object datos []=new Object [4];
-            while (rs.next()){
-             for(int i=0; i<4; i++)  {   
-                 datos [i]= rs.getObject(i+1) ;  
-             } 
-             modelotabla.addRow(datos);
-            }
-            rs.close();
-             } catch (SQLException ex) {
-            Logger.getLogger(MantProductos_invi.class.getName()).log(Level.SEVERE, null, ex);
-}
+//    private void setFilas(){
+//        try {
+//            String sql ="select * from usuario ";
+//            Statement st= cc.conexion().prepareStatement(sql);
+//            ResultSet rs= st.executeQuery(sql);
+//            
+//            Object datos []=new Object [4];
+//            while (rs.next()){
+//             for(int i=0; i<4; i++)  {   
+//                 datos [i]= rs.getObject(i+1) ;  
+//             } 
+//             modelotabla.addRow(datos);
+//            }
+//            rs.close();
+//             } catch (SQLException ex) {
+//            Logger.getLogger(MantProductos_invi.class.getName()).log(Level.SEVERE, null, ex);
+//}
+//    }
+    private void limpiar() {
+        txtPassOculto.setText("");
+        txtPassVisible.setText("");
+        txt_pass.setText("");
     }
+    
     private void llenaComboBox(){
 try { 
 String sql = "SELECT * FROM usuario";  /* Realizamos la consulta a la base de datos*/
@@ -86,40 +95,40 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
  }//acaba llenaComboBox//acaba llenaComboBox
  
 }
-    void acceder(String usuario, String pass){
-        F_Menu_P menu = new F_Menu_P();
-        String cap="";
-        String sql="SELECT * FROM usuario WHERE nombre='"+usuario+"'AND contraseña='"+pass+"'";
-        try {
-            Statement st = cn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-        
-            while(rs.next()){
-               cap=rs.getString("tipo");
-            }
-            String tipo = cap;
-            
-            if(!"Administrador".equals(tipo)){
-                menu.btnagregar.setEnabled(false);
-            } 
-            menu.setVisible(true);
-            menu.pack();
-            menu.btnagregar.setEnabled(false);
-            menu.reporte.setEnabled(false);
-            this.dispose();
-            System.out.print(tipo);         
-             if((!cap.equals("Administrador"))&&(!cap.equals("Invitado"))){
-            
-                JOptionPane.showMessageDialog(this, "NO EXISTEN SUS DATOS");
-            
-            }
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
+//    void acceder(String usuario, String pass){
+//        F_Menu_P menu = new F_Menu_P();
+//        String cap="";
+//        String sql="SELECT * FROM usuario WHERE nombre='"+usuario+"'AND contraseña='"+pass+"'";
+//        try {
+//            Statement st = cn.createStatement();
+//            ResultSet rs = st.executeQuery(sql);
+//        
+//            while(rs.next()){
+//               cap=rs.getString("tipo");
+//            }
+//            String tipo = cap;
+//            
+//            if(!"Administrador".equals(tipo)){
+//                menu.btnagregar.setEnabled(false);
+//            } 
+//            menu.setVisible(true);
+//            menu.pack();
+//            menu.btnagregar.setEnabled(false);
+//            menu.reporte.setEnabled(false);
+//            this.dispose();
+//            System.out.print(tipo);         
+//             if((!cap.equals("Administrador"))&&(!cap.equals("Invitado"))){
+//            
+//                JOptionPane.showMessageDialog(this, "NO EXISTEN SUS DATOS");
+//            
+//            }
+//            
+//            
+//        } catch (SQLException ex) {
+//            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -220,7 +229,7 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
             }
         });
         jPanel1.add(btnborrar);
-        btnborrar.setBounds(150, 420, 120, 50);
+        btnborrar.setBounds(150, 420, 230, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/login.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -276,23 +285,41 @@ su método addElement vamos a agregar cada resultado a nuestro ComboBox, en lo p
 
  
     private void btningresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningresarActionPerformed
-        // TODO add your handling code here:
-       /* String Usuario=txtusuario.getText();
-        String Contraseña=contraseña.getText();
+        String usu =combouser.getSelectedItem().toString();
+        String pass=new String(txtPassOculto.getPassword());
+        SqlUsers modSql = new SqlUsers();
+        users mod = new users();
         
-        if(Usuario.equals("jsaucedo")&&Contraseña.equals("Jsaucedo123")|| Usuario.equals("javier")&&Contraseña.equals("Jferreira")){
-            JOptionPane.showMessageDialog(null,"Bienvenido al Sistema");
-            Menu_Principal c=new Menu_Principal();
-            c.setVisible(true);
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null,"Te equivocaste de usuario o de Contraseña \n"+"vuelva a intentarlo");
-            txtusuario.setText("");
-            contraseña.setText("");
-        }*/
-       String usu=combouser.getSelectedItem().toString();
-        String pas=new String(txtPassOculto.getPassword());
-        acceder(usu,pas);
+      
+        
+        if (!usu.equals("") && !pass.equals("")) {
+            
+            String nuevoPass = hash.md5(pass);
+            mod.setUser(usu);
+            mod.setPassword(nuevoPass);
+            
+            if (modSql.login(mod)) {
+                F_Menu_P p = new F_Menu_P();
+                JOptionPane.showMessageDialog(null, "Bienvenido " + usu);
+                   p.setVisible(true);
+                   p.pack();
+                   p.lbluser.setText(usu.toUpperCase());
+                   p.lbltype.setText(mod.getType_user().toUpperCase());
+                   String typeuser = mod.getType_user().toString();
+                   if(!"Administrador".equals(typeuser)){
+                       p.btnagregar.setEnabled(false);
+                   }
+                   this.setVisible(false);
+                
+               
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Datos incorrectos");
+                limpiar();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe ingresar sus datos");
+        }    
     }//GEN-LAST:event_btningresarActionPerformed
 
     private void btnborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnborrarActionPerformed

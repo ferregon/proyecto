@@ -42,6 +42,7 @@ public class MENU extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +56,7 @@ public class MENU extends javax.swing.JFrame {
         btnsalir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnsalir.setBorderPainted(false);
         btnsalir.setContentAreaFilled(false);
-        btnsalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnsalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnsalir.setFocusPainted(false);
         btnsalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +73,7 @@ public class MENU extends javax.swing.JFrame {
         btniniciar.setBorder(null);
         btniniciar.setBorderPainted(false);
         btniniciar.setContentAreaFilled(false);
-        btniniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btniniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btniniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btniniciarActionPerformed(evt);
@@ -89,36 +90,42 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("rESPONSABLE");
+        jLabel3.setText("RESPONSABLES");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(750, 80, 187, 40);
+        jLabel3.setBounds(700, 80, 230, 40);
 
         jLabel4.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("JAVIER FERREIRA");
+        jLabel4.setText("Javier Ferreira");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(770, 150, 187, 30);
+        jLabel4.setBounds(710, 160, 230, 30);
 
         jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("2018");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(460, 490, 50, 29);
+        jLabel6.setBounds(440, 490, 80, 29);
 
         jLabel8.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel8.setText("JAVIER FERREIRA");
+        jLabel8.setText("Javier Ferreira");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(770, 150, 187, 30);
+        jLabel8.setBounds(710, 160, 240, 30);
 
         jLabel15.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("San Lorenzo - Paraguay");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(400, 450, 187, 29);
+        jLabel15.setBounds(310, 450, 340, 29);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/UNISAL CENTRAL.png"))); // NOI18N
         jPanel1.add(jLabel16);
         jLabel16.setBounds(290, 90, 400, 300);
+
+        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Matias Quevedo");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(710, 200, 230, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/zaschita-informacii2 fondo.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -154,7 +161,7 @@ public class MENU extends javax.swing.JFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
@@ -202,6 +209,7 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
